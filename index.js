@@ -11,9 +11,11 @@ app.set('view engine', 'html');
 
 app.use('/static', express.static('public'))
 
-app.get('/', (req, res) => res.render('index'))
+app.get('/Personajes', (req, res) => res.render('Personajes'))
 
 app.get('/categorias', (req, res) => res.render('categorias'))
+
+app.get('/', (req, res) => res.render('inicio'))
 
 app.get('/recetas/:idReceta', (req, res) => (req.params.idReceta == 1 ) ? res.send(req.params) : res.render('recetas2'))
 
